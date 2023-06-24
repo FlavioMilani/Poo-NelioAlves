@@ -1,0 +1,48 @@
+package application;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+import entities.Employee;
+
+public class Program {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner sc = new Scanner(System.in);
+		
+		List<Employee> emp = new ArrayList<>();
+		
+		System.out.print("Quantos funcionários vão ser registrados? ");
+		int qttEmployee = sc.nextInt();
+		
+		for(int i = 0; i < qttEmployee; i++) {
+			System.out.println("\nEmployee #" + (i+1));
+			
+			System.out.print("Id: ");
+			sc.nextLine();
+			String id = sc.nextLine();
+			
+			System.out.print("Nome: ");
+			String name = sc.nextLine();
+			
+			System.out.print("Id: ");
+			sc.nextLine();
+			Double salary = sc.nextDouble();
+			
+			emp.add(new Employee(id, name, salary));
+		}
+		
+		System.out.println("Entre com o id do funcionário que terá um aumento: ");
+		String id = sc.nextLine();
+		
+		Employee empId = emp.stream().filter(x -> x.getId() == id).findFirst().orElse(null);
+		
+		
+		
+		sc.close();
+	}
+
+}

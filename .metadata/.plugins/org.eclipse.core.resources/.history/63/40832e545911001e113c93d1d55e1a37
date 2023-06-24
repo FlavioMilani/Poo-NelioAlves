@@ -1,0 +1,15 @@
+package br.com.fj.pooneliaalves.util;
+
+
+public class Transactions {
+	private static  double FEE = 5.00;
+	
+	
+	public double withdraw(double balance, double withdraw) {
+		return balance - withdraw - FEE;
+	}
+	
+	public double deposit(double balance, double deposit) {
+		return balance + deposit;
+	}
+}

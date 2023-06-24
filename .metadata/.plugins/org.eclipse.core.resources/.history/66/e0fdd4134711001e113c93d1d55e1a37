@@ -1,0 +1,46 @@
+package br.com.fj.pooneliaalves.application;
+
+import java.util.Scanner;
+
+import br.com.fj.pooneliaalves.entities.Bank;
+
+public class Program {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner sc = new Scanner(System.in);
+		Bank account;
+		
+		System.out.print("Entre com o número da conta: ");
+		String accountNum = sc.nextLine();
+		
+		System.out.print("Entre com o nome do solicitante: ");
+		String accountOwn = sc.nextLine();
+		
+		System.out.println("Terá um deposito inicial? ");
+		char initDeposit = sc.next().charAt(0);
+		double initialValue;
+		
+		sc.close();
+		
+		if(initDeposit == 'S' || initDeposit == 's') {
+			System.out.println("Entre com o valor do deposito inicial: ");
+			initialValue = sc.nextDouble();
+			
+			account = new Bank(accountNum, accountOwn, initialValue);
+		} else {
+			initialValue = 0;
+			account = new Bank(accountNum, accountOwn);
+		}
+		
+		System.out.println("\nInformações da conta:");
+		System.out.println("Conta: " + account.getAccountNum() 
+						+ ", Titular: " + account.getAccountOwn()
+						+ ", Saldo: R$" + String.format("%.2f", account.getInitialValue()));
+		
+		
+		
+	}
+
+}

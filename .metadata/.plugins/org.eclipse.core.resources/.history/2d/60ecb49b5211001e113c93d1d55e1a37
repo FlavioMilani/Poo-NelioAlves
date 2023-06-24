@@ -1,0 +1,25 @@
+package br.com.fj.pooneliaalves.util;
+
+import br.com.fj.pooneliaalves.entities.Bank;
+
+public class Transactions {
+	private double balance;
+	
+	private static  double FEE = 5.00;
+	
+	public Transactions(double balance) {
+		this.balance = balance;
+	}
+	
+	
+	
+	Bank acc = new Bank();
+	
+	public void withdraw(double withdraw) {
+		acc.setBalance(balance - withdraw - FEE);
+	}
+	
+	public double deposit(double deposit) {
+		return balance + deposit;
+	}
+}

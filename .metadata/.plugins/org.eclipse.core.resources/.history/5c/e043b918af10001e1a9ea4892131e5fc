@@ -1,0 +1,52 @@
+package entities;
+
+public class Studant {
+	private String name;
+	private double scoreFQuarter; //Primeiro trimestre;
+	private double scoreSQuarter; //Segundo trimestre;
+	private double scoreTQuarter; //Terceiro trimestre;
+	
+	
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public double getScoreFQuarter() {
+		return scoreFQuarter;
+	}
+	public void setScoreFQuarter(double scoreFQuarter) {
+		this.scoreFQuarter = scoreFQuarter;
+	}
+	public double getScoreSQuarter() {
+		return scoreSQuarter;
+	}
+	public void setScoreSQuarter(double scoreSQuarter) {
+		this.scoreSQuarter = scoreSQuarter;
+	}
+	public double getScoreTQuarter() {
+		return scoreTQuarter;
+	}
+	public void setScoreTQuarter(double scoreTQuarter) {
+		this.scoreTQuarter = scoreTQuarter;
+	}
+	
+	double score;
+	
+	public String finalScore(double scoreFQuarte, double scoreSQuarter, double scoreTQuarter) {		
+		score = scoreFQuarte + scoreSQuarter + scoreTQuarter;
+			
+		return "NOTA FINAL = " + score;
+	}
+	
+	public void result() {
+		if(score >= 60) {
+			System.out.println("Passou!");
+		} else {
+			System.out.println("Reprovou!");
+		}
+		
+	}
+	
+}
