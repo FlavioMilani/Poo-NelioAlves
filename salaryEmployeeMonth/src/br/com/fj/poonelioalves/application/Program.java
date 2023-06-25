@@ -34,6 +34,7 @@ public class Program {
 		System.out.print("Quantos contratos ele tem? ");
 		int qttContracts = sc.nextInt();
 		
+		
 		for (int i = 0; i < qttContracts; i++) {
 			System.out.printf("Contrato #%d:\n", i+1);
 			System.out.print("Data (DD/MM/AAAA): ");
