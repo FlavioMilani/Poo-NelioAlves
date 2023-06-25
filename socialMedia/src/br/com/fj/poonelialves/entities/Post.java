@@ -1,4 +1,4 @@
-package entities;
+package br.com.fj.poonelialves.entities;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;

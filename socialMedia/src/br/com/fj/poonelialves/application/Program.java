@@ -1,11 +1,11 @@
-package application;
+package br.com.fj.poonelialves.application;
 
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
-import entities.Comment;
-import entities.Post;
+import br.com.fj.poonelialves.entities.Comment;
+import br.com.fj.poonelialves.entities.Post;
 
 public class Program {
 

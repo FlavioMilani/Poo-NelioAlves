@@ -1,4 +1,4 @@
-package entities;
+package br.com.fj.poonelialves.entities;
 
 public class Comment {
 	private String comment;
