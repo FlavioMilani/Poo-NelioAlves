@@ -2,8 +2,8 @@ package br.com.fj.poonelioalves.entities;
 
 public class Employee {
 	private String name;
-	protected Integer hours;
-	protected double valuePerHour;
+	private Integer hours;
+	private double valuePerHour;
 	
 	public Employee() {
 	}
