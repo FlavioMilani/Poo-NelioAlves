@@ -9,6 +9,7 @@ public class Employee {
 	}
 
 	public Employee(String name, Integer hours, double valuePerHour) {
+		super();
 		this.name = name;
 		this.hours = hours;
 		this.valuePerHour = valuePerHour;
