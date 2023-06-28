@@ -4,7 +4,10 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
+import br.com.fj.poonelioalves.model.exceptions.DomainException;
+
 public class Reservation {
+	
 	private Integer roomNumber;
 	private Date checkIn;
 	private Date checkOut;
@@ -15,6 +18,11 @@ public class Reservation {
 	}
 	
 	public Reservation(Integer roomNumber, Date checkIn, Date checkOut) {
+		
+		if(!checkOut.after(checkIn)) {
+			throw new DomainException("Check-out deve ser depois da data de check-in.");
+		}
+		
 		this.roomNumber = roomNumber;
 		this.checkIn = checkIn;
 		this.checkOut = checkOut;
@@ -41,20 +49,20 @@ public class Reservation {
 		return TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS);
 	}
 	
-	public String updateDates(Date checkIn, Date checkOut) {
+	public void updateDates(Date checkIn, Date checkOut) {
 		Date now = new Date();
 		
 		if(checkIn.before(now) || checkOut.before(now)) {
-			return "As datas de devem ser futuras.";
+			throw new DomainException("As datas de atualização devem ser futuras.");
 		} 
+		
 		if(!checkOut.after(checkIn)) {
-			return "Check-out deve ser depois da data de check-in.";
+			throw new DomainException("Check-out deve ser depois da data de check-in.");
 		}
 		
 		this.checkIn = checkIn;
 		this.checkOut = checkOut;
 		
-		return "Reserva atualizada!";
 	}
 	
 	@Override
